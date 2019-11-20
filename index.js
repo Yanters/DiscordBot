@@ -42,7 +42,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
                 message.channel.sendMessage(a.toFixed(4));
             
         break;
-        case 'send':
+        case 'graph':
                 if(args[1]=='sin'){
                         var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0068.png');
                 }
