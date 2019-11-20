@@ -62,5 +62,5 @@ let args = message.content.substring(PREFIX.length).split(" ");
 
 })
 
-bot.login(procces.env.token);
+bot.login(token);
 
