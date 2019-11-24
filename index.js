@@ -16,7 +16,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
         case 'sin':
                 var a = parseFloat(args[1]);
                 a = Math.sin(a* Math.PI / 180);
-                //a = Math.decimal(a, 4);
+                
                 message.channel.sendMessage(a.toFixed(4));
 
         break;
