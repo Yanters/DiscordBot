@@ -4,3 +4,6 @@ Available commands:
 - !tg <value> - Calculates the tan of the given angle in degrees.
 - !ctg <value> - Calculate the cot from the given angle in degrees.
 - !graph <sin / cos / tg / ctg> - Shows the graph of the given function.
+
+Example of use:
+https://www.youtube.com/watch?v=vg7w43aNEX0
