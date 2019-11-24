@@ -21,17 +21,17 @@ let args = message.content.substring(PREFIX.length).split(" ");
 
         break;
         case 'cos':
-             var a = parseFloat(args[1]);
-             a = Math.cos(a* Math.PI / 180);
+                var a = parseFloat(args[1]);
+                a = Math.cos(a* Math.PI / 180);
              
-             message.channel.sendMessage(a.toFixed(4));
+                message.channel.sendMessage(a.toFixed(4));
             
         break;
         case 'tg':
-                 var a = parseFloat(args[1]);
-                 a = Math.tan(a* Math.PI / 180);
+                var a = parseFloat(args[1]);
+                a = Math.tan(a* Math.PI / 180);
                         
-                 message.channel.sendMessage(a.toFixed(4));
+                message.channel.sendMessage(a.toFixed(4));
             
         break;
         case 'ctg':
