@@ -16,31 +16,31 @@ let args = message.content.substring(PREFIX.length).split(" ");
         case 'sin':
                 var a = parseFloat(args[1]);
                 a = Math.sin(a* Math.PI / 180);
-                
+
                 message.channel.sendMessage(a.toFixed(4));
 
         break;
         case 'cos':
                 var a = parseFloat(args[1]);
                 a = Math.cos(a* Math.PI / 180);
-             
+
                 message.channel.sendMessage(a.toFixed(4));
-            
+
         break;
         case 'tg':
                 var a = parseFloat(args[1]);
                 a = Math.tan(a* Math.PI / 180);
-                        
+
                 message.channel.sendMessage(a.toFixed(4));
-            
+
         break;
         case 'ctg':
                 var a = parseFloat(args[1]);
                 a = Math.tan(a* Math.PI / 180);
                 a = Math.pow(a,-1);
-                
+
                 message.channel.sendMessage(a.toFixed(4));
-            
+
         break;
         case 'graph':
                 if(args[1]=='sin'){
@@ -56,16 +56,42 @@ let args = message.content.substring(PREFIX.length).split(" ");
                         var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0071.png');
                         }
                 message.channel.sendMessage(attachment);
-            
+
         break;
         case 'help':
             message.channel.sendMessage("It will be soon... Just wait.")
             break;
-            
-        
+
+        case 'clear':
+            if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+            return message.reply("You can't delete messages....").then(m => m.delete(5000));
+        }
+
+        // Check if args[0] is a number
+        if (isNaN(args[0]) || parseInt(args[0]) <= 0) {
+            return message.reply("Yeah.... That's not a numer? I also can't delete 0 messages by the way.").then(m => m.delete(5000));
+        }
+
+        // Maybe the bot can't delete messages
+        if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
+            return message.reply("Sorryy... I can't delete messages.").then(m => m.delete(5000));
+        }
+
+        let deleteAmount;
+
+        if (parseInt(args[0]) > 100) {
+            deleteAmount = 100;
+        } else {
+            deleteAmount = parseInt(args[0]);
+        }
+
+        message.channel.bulkDelete(deleteAmount, true)
+            .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
+            .catch(err => message.reply(`Something went wrong... ${err}`));
+    }
+        break;
     }
 
-})
+)
 
 bot.login(token);
-
