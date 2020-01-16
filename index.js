@@ -58,6 +58,12 @@ let args = message.content.substring(PREFIX.length).split(" ");
                 message.channel.sendMessage(attachment);
             
         break;
+        case 'help':
+            message.channel.sendMessage("It will be soon... Just wait.")
+            break;
+            default: {
+        System.out.println("default");
+    }
     }
 
 })
