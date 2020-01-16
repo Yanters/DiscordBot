@@ -87,7 +87,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
     
             message.channel.bulkDelete(deleteAmount, true)
                 .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
-                .catch(err => message.reply(`Something went wrong... ${err}`));
+                .then(m => m.delete(5000));
         break;                
         
     }
