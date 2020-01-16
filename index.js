@@ -61,11 +61,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
         case 'help':
             message.channel.sendMessage("It will be soon... Just wait.")
             break;
-        case 'clear':
-            message.channel.bulkDelete(args[1]).then() =>{
-                message.channel.send("Cleared ${args[1]} messages.").then(msg => msg.delete(3000));
-            }
-            break;
+        
     }
 
 })
