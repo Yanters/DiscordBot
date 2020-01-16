@@ -42,6 +42,10 @@ let args = message.content.substring(PREFIX.length).split(" ");
                 message.channel.sendMessage(a.toFixed(4));
 
         break;
+        case 'norberto':
+            var attachment = new Attachment ('https://media.discordapp.net/attachments/572769012551778304/632685975725670421/unknown.png');
+            message.channel.sendMessage(attachment);
+            break;
         case 'graph':
                 if(args[1]=='sin'){
                         var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0068.png');
