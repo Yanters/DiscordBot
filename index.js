@@ -61,9 +61,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
         case 'help':
             message.channel.sendMessage("It will be soon... Just wait.")
             break;
-            default: {
-        message.channel.sendMessage("This command does not exist. Type !help for a list of commands");
-    }
+           
     }
 
 })
