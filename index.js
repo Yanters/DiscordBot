@@ -67,8 +67,8 @@ let args = message.content.substring(PREFIX.length).split(" ");
             return message.reply("You can't delete messages....").then(m => m.delete(5000));
         }
 
-        // Check if args[0] is a number
-        if (isNaN(args[0]) || parseInt(args[0]) <= 0) {
+        // Check if args[1] is a number
+        if (isNaN(args[1]) || parseInt(args[1]) <= 0) {
             return message.reply("Yeah.... That's not a numer? I also can't delete 0 messages by the way.").then(m => m.delete(5000));
         }
 
@@ -79,10 +79,10 @@ let args = message.content.substring(PREFIX.length).split(" ");
 
         let deleteAmount;
 
-        if (parseInt(args[0]) > 100) {
+        if (parseInt(args[1]) > 100) {
             deleteAmount = 100;
         } else {
-            deleteAmount = parseInt(args[0]);
+            deleteAmount = parseInt(args[1]);
         }
 
         message.channel.bulkDelete(deleteAmount, true)
