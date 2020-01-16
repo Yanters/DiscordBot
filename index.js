@@ -65,6 +65,8 @@ let args = message.content.substring(PREFIX.length).split(" ");
         
     }
 
-)
+})
 
 bot.login(token);
+
+    
