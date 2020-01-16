@@ -62,7 +62,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
             message.channel.sendMessage("It will be soon... Just wait.")
             break;
             default: {
-        System.out.println("default");
+        message.channel.sendMessage("This command does not exist. Type !help for a list of commands");
     }
     }
 
