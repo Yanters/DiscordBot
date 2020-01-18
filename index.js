@@ -67,7 +67,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
                 message.channel.sendMessage(attachment);
 
         break;
-        case 'image':
+        case 'meme':
             image(message);
              break;
         case 'help':
@@ -109,7 +109,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
 function image(message){
  
     var options = {
-        url: "http://results.dogpile.com/serp?qc=images&q=" + "meme",
+        url: "http://results.dogpile.com/serp?qc=images&q=" + "dark meme",
         method: "GET",
         headers: {
             "Accept": "text/html",
