@@ -72,7 +72,7 @@ bot.on('message', message=>{
               var step;
                 for (step = 1; step < args.length-1; step++) 
                 {
-                        allargs+=args[i]+" ";
+                        allargs+=args[step]+" ";
                 }
              image(message,allargs);
             break;
