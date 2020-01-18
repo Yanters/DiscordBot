@@ -63,7 +63,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
 
         break;
         case 'cat':
-            var attachment = new Attachment ('https://picsum.photos/200');
+            var attachment = new Attachment ('https://i.picsum.photos/id/56/200/200.jpg');
              message.channel.sendMessage(attachment);
              break;
         case 'help':
