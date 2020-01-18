@@ -109,7 +109,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
 function image(message){
  
     var options = {
-        url: "http://results.dogpile.com/serp?qc=images&q=" + "dexter",
+        url: "http://results.dogpile.com/serp?qc=images&q=" + "meme",
         method: "GET",
         headers: {
             "Accept": "text/html",
