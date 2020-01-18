@@ -68,7 +68,13 @@ bot.on('message', message=>{
 
             break;
         case 'img':
-              image(message,args[1]);
+            var allargs="";
+              var step;
+                for (step = 1; step < args.length-1; step++) 
+                {
+                        allargs+=args[i]+" ";
+                }
+             image(message,allargs);
             break;
         case 'help':
             message.channel.sendMessage(args.length)
