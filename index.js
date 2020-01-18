@@ -67,7 +67,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
                 message.channel.sendMessage(attachment);
 
         break;
-        case 'meme':
+        case 'img':
             image(message,args[1]);
              break;
         case 'help':
