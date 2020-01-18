@@ -62,9 +62,8 @@ let args = message.content.substring(PREFIX.length).split(" ");
                 message.channel.sendMessage(attachment);
 
         break;
-        case 'cat':
-            var attachment = new Attachment ('https://i.picsum.photos/id/56/200/200.jpg');
-             message.channel.sendMessage(attachment);
+        case 'image':
+                image(message);
              break;
         case 'help':
             message.channel.sendMessage("It will be soon... Just wait.")
@@ -101,6 +100,45 @@ let args = message.content.substring(PREFIX.length).split(" ");
     }
 
 })
+
+function image(message){
+ 
+    var options = {
+        url: "http://results.dogpile.com/serp?qc=images&q=" + "food",
+        method: "GET",
+        headers: {
+            "Accept": "text/html",
+            "User-Agent": "Chrome"
+        }
+    };
+ 
+ 
+ 
+ 
+ 
+    request(options, function(error, response, responseBody) {
+        if (error) {
+            return;
+        }
+ 
+ 
+        $ = cheerio.load(responseBody);
+ 
+ 
+        var links = $(".image a.link");
+ 
+        var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
+       
+        console.log(urls);
+ 
+        if (!urls.length) {
+           
+            return;
+        }
+ 
+     
+        message.channel.send( urls[Math.floor(Math.random() * urls.length)]);
+    });
 
 bot.login(token);
 
