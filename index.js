@@ -15,67 +15,73 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', message=>{
-let args = message.content.substring(PREFIX.length).split(" ");
+    let args = message.content.substring(PREFIX.length).split(" ");
 
     switch(args[0]){
         case 'sin':
-                var a = parseFloat(args[1]);
-                a = Math.sin(a* Math.PI / 180);
+            var a = parseFloat(args[1]);
+            a = Math.sin(a* Math.PI / 180);
 
-                message.channel.sendMessage(a.toFixed(4));
+            message.channel.sendMessage(a.toFixed(4));
 
-        break;
+            break;
         case 'cos':
-                var a = parseFloat(args[1]);
-                a = Math.cos(a* Math.PI / 180);
+            var a = parseFloat(args[1]);
+            a = Math.cos(a* Math.PI / 180);
 
-                message.channel.sendMessage(a.toFixed(4));
+            message.channel.sendMessage(a.toFixed(4));
 
-        break;
+            break;
         case 'tg':
-                var a = parseFloat(args[1]);
-                a = Math.tan(a* Math.PI / 180);
+            var a = parseFloat(args[1]);
+            a = Math.tan(a* Math.PI / 180);
 
-                message.channel.sendMessage(a.toFixed(4));
+            message.channel.sendMessage(a.toFixed(4));
 
-        break;
+            break;
         case 'ctg':
-                var a = parseFloat(args[1]);
-                a = Math.tan(a* Math.PI / 180);
-                a = Math.pow(a,-1);
+            var a = parseFloat(args[1]);
+            a = Math.tan(a* Math.PI / 180);
+            a = Math.pow(a,-1);
 
-                message.channel.sendMessage(a.toFixed(4));
+            message.channel.sendMessage(a.toFixed(4));
 
-        break;
+            break;
         case 'norberto':
             var attachment = new Attachment ('https://media.discordapp.net/attachments/572769012551778304/632685975725670421/unknown.png');
             message.channel.sendMessage(attachment);
             break;
         case 'graph':
-                if(args[1]=='sin'){
-                        var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0068.png');
-                }
-                if(args[1]=='cos'){
-                        var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0069.png');
-                }
-                if(args[1]=='tg'){
-                        var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0070.png');
-                }
-                if(args[1]=='ctg'){
-                        var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0071.png');
-                        }
-                message.channel.sendMessage(attachment);
+            if(args[1]=='sin'){
+                var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0068.png');
+            }
+            if(args[1]=='cos'){
+                var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0069.png');
+            }
+            if(args[1]=='tg'){
+                var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0070.png');
+            }
+            if(args[1]=='ctg'){
+                var attachment = new Attachment ('https://www.matemaks.pl/grafika/g0071.png');
+            }
+            message.channel.sendMessage(attachment);
 
-        break;
+            break;
         case 'img':
-            image(message,args[1]);
-             break;
+            var allargs="";
+            var step;
+                for (step = 0; step < 5; step++) 
+                {
+                        allargs+=args[i]+" ";
+                }
+            image(message,allargs);
+            break;
         case 'help':
             message.channel.sendMessage("It will be soon... Just wait.")
             break;
         case 'clear':
-                // Member doesn't have permissions
-        if (!message.member.hasPermission("MANAGE_MESSAGES")) {
+            // Member doesn't have permissions
+            if (!message.member.hasPermission("MANAGE_MESSAGES")) {
                 return message.reply("You can't delete messages....").then(m => m.delete(5000));
             }
     
@@ -100,7 +106,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
             message.channel.bulkDelete(deleteAmount, true)
                 .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
                 .then(m => m.delete(5000));
-        break;                
+            break;                
         
     }
 
@@ -152,5 +158,3 @@ function image(message,search){
 
 
 bot.login(token);
-
-    
