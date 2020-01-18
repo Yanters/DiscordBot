@@ -71,7 +71,7 @@ bot.on('message', message=>{
               image(message,args[1]);
             break;
         case 'help':
-            message.channel.sendMessage("It will be soon... Just wait.")
+            message.channel.sendMessage(args.size())
             break;
         case 'clear':
             // Member doesn't have permissions
