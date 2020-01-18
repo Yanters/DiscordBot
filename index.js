@@ -63,7 +63,7 @@ let args = message.content.substring(PREFIX.length).split(" ");
 
         break;
         case 'cat':
-            var attachment = new Attachment ('http://thecatapi.com/api/images/get?format=src&type=png');
+            var attachment = new Attachment ('https://picsum.photos/200');
              message.channel.sendMessage(attachment);
              break;
         case 'help':
