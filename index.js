@@ -68,13 +68,7 @@ bot.on('message', message=>{
 
             break;
         case 'img':
-            var allargs="";
-            var step;
-                for (step = 0; step < 5; step++) 
-                {
-                        allargs+=args[i]+" ";
-                }
-            image(message,allargs);
+              image(message,args[1]);
             break;
         case 'help':
             message.channel.sendMessage("It will be soon... Just wait.")
