@@ -62,6 +62,10 @@ let args = message.content.substring(PREFIX.length).split(" ");
                 message.channel.sendMessage(attachment);
 
         break;
+        case 'cat':
+            var attachment = new Attachment ('http://thecatapi.com/api/images/get?format=src&type=png');
+             message.channel.sendMessage(attachment);
+             break;
         case 'help':
             message.channel.sendMessage("It will be soon... Just wait.")
             break;
