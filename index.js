@@ -17,11 +17,10 @@ bot.on('ready', () =>{
 bot.on('message', message=>{
  
  let args = message.content.substring(PREFIX.length).split(" ");
- let arg = message.content.toLowerCase();
-    if(arg[0]== 'x' && arg[1]=='d')
-    {
-     message.channel.sendMessage('XDDD');
-    }
+  if(message.content === "XD"||message.content === "xd"||message.content === "xD")
+ {
+  message.channel.sendMessage('XDDD');
+ }
  
  switch(args[0]){
        case 'XD':
