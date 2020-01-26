@@ -18,9 +18,9 @@ bot.on('message', message=>{
  
  let args = message.content.substring(PREFIX.length).split(" ");
  
- if(message.content === "XD")
+ if(message.content === "XD"||message.content === "xd"||message.content === "xD")
  {
-  message.reply('XD');
+  message.channel.sendMessage('XD');
  }
  
  switch(args[0]){
