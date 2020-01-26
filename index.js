@@ -16,9 +16,9 @@ bot.on('ready', () =>{
 
 bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
- if(message.content.toLowerCase=="xd")
+ if(message.content=="xd"||"XD"||"xD")
     {
-        message.channel.sendMessage("XD");
+        message.channel.sendMessage("XDD");
     }
    
  
