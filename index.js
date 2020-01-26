@@ -18,6 +18,11 @@ bot.on('message', message=>{
  
  let args = message.content.substring(PREFIX.length).split(" ");
  
+ if(message.content === "XD")
+ {
+  message.reply('iks de');
+ }
+ 
  switch(args[0]){
        case 'XD':
         message.channel.sendMessage("XD");
