@@ -17,13 +17,10 @@ bot.on('ready', () =>{
 bot.on('message', message=>{
  
  let args = message.content.substring(PREFIX.length).split(" ");
-  let arg = message.content.toLowerCase();
-    switch(arg[0]){
-        case 'x':
-            message.channel.sendMessage("XD");
-            break;
-    }  
-    switch(args[0]){
+      switch(args[0]){
+       case 'XD':
+        message.channel.sendMessage("XD");
+        break;
         case 'sin':
             var a = parseFloat(args[1]);
             a = Math.sin(a* Math.PI / 180);
