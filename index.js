@@ -16,7 +16,10 @@ bot.on('ready', () =>{
 
 bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
-
+ if(message.content.toLowerCase==="xd")
+    {
+        message.channel.sendMessage("XD");
+    }
    
  
     switch(args[0]){
