@@ -20,7 +20,7 @@ bot.on('message', message=>{
  
  if(message.content === "XD")
  {
-  message.reply('iks de');
+  message.reply('XD');
  }
  
  switch(args[0]){
