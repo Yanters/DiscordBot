@@ -19,7 +19,7 @@ bot.on('message', message=>{
 
    if(message.content=="XD"||"xD")
     {
-        message.channel.sendMessage("XD");
+        message.channel.sendMessage("XDDD");
     }
  
     switch(args[0]){
