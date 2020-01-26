@@ -15,12 +15,14 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', message=>{
- if(message.content==='xd'||'xD'||'XD')
-    {
-        message.channel.sendMessage("XDD");
-    }  
+ 
  let args = message.content.substring(PREFIX.length).split(" ");
-    
+  let arg = message.content.toLowerCase();
+    switch(arg){
+        case 'xd':
+            message.channel.sendMessage("XD");
+            break;
+    }  
     switch(args[0]){
         case 'sin':
             var a = parseFloat(args[1]);
