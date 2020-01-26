@@ -16,11 +16,8 @@ bot.on('ready', () =>{
 
 bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
-  if(message.content()=="xd"||"xD"||"XD")
-    {
-        message.channel.sendMessage("XDD");
-        
-    }
+ 
+    
     switch(args[0]){
         case 'sin':
             var a = parseFloat(args[1]);
