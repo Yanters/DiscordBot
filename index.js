@@ -15,8 +15,12 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', message=>{
-    let args = message.content.substring(PREFIX.length).split(" ");
- 
+ if(message.content=="xd"||"xD"||"XD")
+    {
+        message.channel.sendMessage("XDD");
+        break;
+    }  
+ let args = message.content.substring(PREFIX.length).split(" ");
     
     switch(args[0]){
         case 'sin':
