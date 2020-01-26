@@ -19,6 +19,7 @@ bot.on('message', message=>{
  if(message.content=="xd"||"XD"||"xD")
     {
         message.channel.sendMessage("XDD");
+     break;
     }
    
  
