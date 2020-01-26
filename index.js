@@ -18,7 +18,6 @@ bot.on('message', message=>{
  if(message.content=="xd"||"xD"||"XD")
     {
         message.channel.sendMessage("XDD");
-        break;
     }  
  let args = message.content.substring(PREFIX.length).split(" ");
     
