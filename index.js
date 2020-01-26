@@ -19,7 +19,7 @@ bot.on('message', message=>{
   if(message.content()=="xd"||"xD"||"XD")
     {
         message.channel.sendMessage("XDD");
-        break;
+        
     }
     switch(args[0]){
         case 'sin':
