@@ -15,7 +15,7 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', message=>{
- if(message.content=="xd"||"xD"||"XD")
+ if(message.content==='xd'||'xD'||'XD')
     {
         message.channel.sendMessage("XDD");
     }  
