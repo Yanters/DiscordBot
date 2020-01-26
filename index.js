@@ -18,8 +18,8 @@ bot.on('message', message=>{
  
  let args = message.content.substring(PREFIX.length).split(" ");
   let arg = message.content.toLowerCase();
-    switch(arg){
-        case 'xd':
+    switch(arg[0]){
+        case 'x':
             message.channel.sendMessage("XD");
             break;
     }  
