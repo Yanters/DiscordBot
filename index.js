@@ -4,7 +4,7 @@ const bot = new Client();
 const cheerio = require('cheerio');
  
 const request = require('request');
- 
+repeat = new Boolean(true);
 
 const token = process.env.token;
 
@@ -17,15 +17,23 @@ bot.on('ready', () =>{
 bot.on('message', message=>{
  
  let args = message.content.substring(PREFIX.length).split(" ");
-  if(message.content === "XD"||message.content === "xd"||message.content === "xD")
- {
-  message.channel.sendMessage('XDDD');
- }
+ let arg = message.content.toLowerCase();
+   if(repeat) 
+    {
+    for (var i=0;i<arg.length;i++)
+        {
+    if(arg[i]=== 'x' && arg[i+1]==='d')
+            {
+            message.channel.sendMessage('XD');
+            repeat = false;
+            }   
+        }
+    }else
+    {
+        repeat=true;
+    }
  
  switch(args[0]){
-       case 'XD':
-        message.channel.sendMessage("XD");
-        break;
         case 'sin':
             var a = parseFloat(args[1]);
             a = Math.sin(a* Math.PI / 180);
