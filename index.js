@@ -37,7 +37,11 @@ bot.on('message', message=>{
  {
   message.channel.sendMessage('knut');
  }
- 
+
+ if(arg=='crazeq')
+ {
+  message.channel.sendMessage('stulejarz');
+ }
  switch(args[0]){
         case 'sin':
             var a = parseFloat(args[1]);
