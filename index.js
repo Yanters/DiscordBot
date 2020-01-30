@@ -38,10 +38,14 @@ bot.on('message', message=>{
   message.channel.sendMessage('knut');
  }
 
- if(arg=='crazeq')
- {
-  message.channel.sendMessage('stulejarz');
- }
+  for (var i=0;i<arg.length;i++)
+        {
+    if(arg[i]=== 'c' && arg[i+1]==='r'&& arg[i+1]==='a'&& arg[i+1]==='z'&& arg[i+1]==='e'&& arg[i+1]==='q')
+            {
+            message.channel.sendMessage('stulejarz');
+            
+            }   
+        }
  switch(args[0]){
         case 'sin':
             var a = parseFloat(args[1]);
