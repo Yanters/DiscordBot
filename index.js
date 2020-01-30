@@ -47,6 +47,23 @@ bot.on('message', message=>{
             }   
         }
  switch(args[0]){
+        case 'kick':
+            const user = message.mentions.users.first();
+            if(user ){
+                const member = message.guild.member(user);
+            if(member){
+             member.kick('You were kick for trolling!').then(() => {
+             message.replay('Sucessfully kicked ${user.tag}');
+             }).catch(err => {
+                message.replay('I was unable to kick the member');
+             });
+            }else{
+             message.replay("That user isn\'t in the this guild")
+            }
+           }else  {
+            message.replay('You need to specify a person!')
+           }
+            break;
         case 'sin':
             var a = parseFloat(args[1]);
             a = Math.sin(a* Math.PI / 180);
