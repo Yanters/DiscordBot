@@ -18,7 +18,7 @@ bot.on('message', message=>{
  
  let args = message.content.substring(PREFIX.length).split(" ");
  let arg = message.content.toLowerCase();
-   if(repeat) 
+  /* if(repeat) 
     {
     for (var i=0;i<arg.length;i++)
         {
@@ -32,6 +32,11 @@ bot.on('message', message=>{
     {
         repeat=true;
     }
+ */
+ if(arg=='misterio to bot')
+ {
+  message.channel.sendMessage('knut');
+ }
  
  switch(args[0]){
         case 'sin':
