@@ -33,10 +33,7 @@ bot.on('message', message=>{
         repeat=true;
     }
  */
- if(arg=='misterio'||arg=='misterioq')
- {
-  message.channel.sendMessage('knut');
- }
+
 
   for (var i=0;i<arg.length;i++)
         {
