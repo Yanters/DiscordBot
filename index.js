@@ -45,7 +45,7 @@ bot.on('message', message=>{
             }   
         }
  switch(args[0]){
-  case 'kick':	
+ /* case 'kick':	
             const user = message.mentions.users.first();	
             if(user ){	
                 const member = message.guild.member(user);	
@@ -62,7 +62,7 @@ bot.on('message', message=>{
             message.replay('You need to specify a person!')	
            }	
             break;
-   break;
+   break;*/
         case 'sin':
             var a = parseFloat(args[1]);
             a = Math.sin(a* Math.PI / 180);
