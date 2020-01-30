@@ -1,4 +1,6 @@
 const {Client, Attachment} = require('discord.js');
+const { stripIndents } = require("common-tags");
+const { promptMessage } = require("../../functions.js");
 const bot = new Client();
 
 const cheerio = require('cheerio');
