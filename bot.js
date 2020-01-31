@@ -82,19 +82,19 @@ bot.on('message', message=>{
         case 'clear':
             // Member doesn't have permissions
             if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-                message.channel.bulkDelete(1, true);
+                
                 return message.reply("You can't delete messages....").then(m => m.delete(3000));
                 }
     
             // Check if args[1] is a number
             if (isNaN(args[1]) || parseInt(args[1]) <= 0) {
-                message.channel.bulkDelete(1, true);
+                
                 return message.reply("Yeah.... That's not a numer? I also can't delete 0 messages by the way.").then(m => m.delete(3000));
             }
     
             // Maybe the bot can't delete messages
             if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
-                message.channel.bulkDelete(1, true);
+                
                 return message.reply("Sorryy... I can't delete messages.").then(m => m.delete(3000));
             }
     
