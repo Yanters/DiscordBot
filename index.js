@@ -6,7 +6,7 @@ const cheerio = require('cheerio');
 const request = require('request');
  
 
-const token = process.env.token;
+
 
 const PREFIX = '!';
 
@@ -156,4 +156,4 @@ function image(message,search){
 }
 
 
-bot.login(token);
+bot.login(process.env.token);
