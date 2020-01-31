@@ -1,11 +1,10 @@
 const {Client, Attachment} = require('discord.js');
-
 const bot = new Client();
 
 const cheerio = require('cheerio');
  
 const request = require('request');
-//repeat = new Boolean(true);
+ 
 
 const token = process.env.token;
 
@@ -16,53 +15,9 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', message=>{
- 
- let args = message.content.substring(PREFIX.length).split(" ");
-// let arg = message.content.toLowerCase();
-  /* if(repeat) 
-    {
-    for (var i=0;i<arg.length;i++)
-        {
-    if(arg[i]=== 'x' && arg[i+1]==='d')
-            {
-            message.channel.sendMessage('XD');
-            repeat = false;
-            }   
-        }
-    }else
-    {
-        repeat=true;
-    }
- */
+    let args = message.content.substring(PREFIX.length).split(" ");
 
-
- /* for (var i=0;i<arg.length;i++)
-        {
-    if(arg[i]=== 'c' && arg[i+1]==='r'&& arg[i+1]==='a'&& arg[i+1]==='z'&& arg[i+1]==='e'&& arg[i+1]==='q')
-            {
-            message.channel.sendMessage('stulejarz');
-            
-            }   
-        } */
- switch(args[0]){
- /* case 'kick':	
-            const user = message.mentions.users.first();	
-            if(user ){	
-                const member = message.guild.member(user);	
-            if(member){	
-             member.kick('You were kick for trolling!').then(() => {	
-             message.replay('Sucessfully kicked ${user.tag}');	
-             }).catch(err => {	
-                message.replay('I was unable to kick the member');	
-             });	
-            }else{	
-             message.replay("That user isn\'t in the this guild")	
-            }	
-           }else  {	
-            message.replay('You need to specify a person!')	
-           }	
-            break;
-   */
+    switch(args[0]){
         case 'sin':
             var a = parseFloat(args[1]);
             a = Math.sin(a* Math.PI / 180);
@@ -114,30 +69,29 @@ bot.on('message', message=>{
             break;
         case 'img':
             var allargs="";
-              var step;
-                for (step = 1; step < args.length; step++) 
-                {
-                        allargs+=args[step]+" ";
-                }
-             image(message,allargs);
+            for(int i=1;i<args.size();i++)
+            {
+                allargs+=args[i]+" ";
+            }
+            image(message,allargs);
             break;
         case 'help':
-            message.channel.sendMessage(args.length)
+            message.channel.sendMessage("It will be soon... Just wait.")
             break;
         case 'clear':
             // Member doesn't have permissions
             if (!message.member.hasPermission("MANAGE_MESSAGES")) {
-                return message.reply("You can't delete messages....").then(m => m.delete(3000));
+                return message.reply("You can't delete messages....").then(m => m.delete(5000));
             }
     
             // Check if args[1] is a number
             if (isNaN(args[1]) || parseInt(args[1]) <= 0) {
-                return message.reply("Yeah.... That's not a numer? I also can't delete 0 messages by the way.").then(m => m.delete(3000));
+                return message.reply("Yeah.... That's not a numer? I also can't delete 0 messages by the way.").then(m => m.delete(5000));
             }
     
             // Maybe the bot can't delete messages
             if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
-                return message.reply("Sorryy... I can't delete messages.").then(m => m.delete(3000));
+                return message.reply("Sorryy... I can't delete messages.").then(m => m.delete(5000));
             }
     
             let deleteAmount;
@@ -150,7 +104,7 @@ bot.on('message', message=>{
     
             message.channel.bulkDelete(deleteAmount, true)
                 .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
-                .then(m => m.delete(3000));
+                .then(m => m.delete(5000));
             break;                
         
     }
