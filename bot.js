@@ -101,9 +101,10 @@ bot.on('message', message=>{
                 deleteAmount = 100;
             } else {
                 deleteAmount = parseInt(args[1]);
+                deleteAmount = deleteAmount+1
             }
     
-            message.channel.bulkDelete(deleteAmount+1, true)
+            message.channel.bulkDelete(deleteAmount, true)
                 .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
                 .then(m => m.delete(3000));
             break;                
