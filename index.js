@@ -5,7 +5,7 @@ const bot = new Client();
 const cheerio = require('cheerio');
  
 const request = require('request');
-repeat = new Boolean(true);
+//repeat = new Boolean(true);
 
 const token = process.env.token;
 
@@ -18,7 +18,7 @@ bot.on('ready', () =>{
 bot.on('message', message=>{
  
  let args = message.content.substring(PREFIX.length).split(" ");
- let arg = message.content.toLowerCase();
+// let arg = message.content.toLowerCase();
   /* if(repeat) 
     {
     for (var i=0;i<arg.length;i++)
@@ -36,14 +36,14 @@ bot.on('message', message=>{
  */
 
 
-  for (var i=0;i<arg.length;i++)
+ /* for (var i=0;i<arg.length;i++)
         {
     if(arg[i]=== 'c' && arg[i+1]==='r'&& arg[i+1]==='a'&& arg[i+1]==='z'&& arg[i+1]==='e'&& arg[i+1]==='q')
             {
             message.channel.sendMessage('stulejarz');
             
             }   
-        }
+        } */
  switch(args[0]){
  /* case 'kick':	
             const user = message.mentions.users.first();	
@@ -62,7 +62,7 @@ bot.on('message', message=>{
             message.replay('You need to specify a person!')	
            }	
             break;
-   break;*/
+   */
         case 'sin':
             var a = parseFloat(args[1]);
             a = Math.sin(a* Math.PI / 180);
