@@ -63,7 +63,7 @@ client.on('message', message =>{
                 });
             }
             else{
-                con.query('UPDATE DiscordXP SET userEXP = ${results[0].userEXP + randomXP()} WHERE id = ${message.author.id}', err => {
+                con.query('UPDATE DiscordXP SET userEXP = ${results[0].userEXP + randomXP()} WHERE UserID = ${message.author.id}', err => {
                     if(err) throw err;
                     console.log("Successfully updated user xp!");
                 })
