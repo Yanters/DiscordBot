@@ -53,7 +53,7 @@ bot.on('message', message =>{
 
     }
     else{
-        con.query('SELECT UserID,UserEXP FROM DiscordXP WHERE UserID = ${message.author.id}', (err, results) =>{
+        con.query('SELECT UserID,UserEXP FROM DiscordXP WHERE UserID = 2', (err, results) =>{
             if(err) throw err;
             if(results.length === 0)
             {
