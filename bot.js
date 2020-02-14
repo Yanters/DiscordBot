@@ -3,6 +3,21 @@ const bot = new Client();
 const PREFIX = '!';
 const mysql = require("mysql");
 
+var con = mysql.createConnection({
+    host: "db4free.net",
+    port: "3306",
+    user: "konradoslaw",
+    password: "Acocieto?",
+    database: "projekty",
+
+});
+
+con.connect(err => {
+    if(err) throw err;
+   console.log("Connected to database!");
+   con.query("SHOW TABLES", console.log);
+});
+
 client.on('guildMemberAdd', member =>{
     con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES (${member.id}, 0)', err =>{
         if(err) throw err;
@@ -17,19 +32,42 @@ client.on('guildMemberRemove', member =>{
     })
 });
 
-var con = mysql.createConnection({
-    host: "db4free.net",
-    port: "3306",
-    user: "konradoslaw",
-    password: "Acocieto?",
-    database: "projekty",
+function randomXP()
+{
+    return Math.ceil(Math.random()*25);
+}
 
-});
 
-con.connect(err => {
-    if(err) throw err;
-   console.log("Connected to database!");
-   con.query("SHOW TABLES", console.log);
+client.on('message', message =>{
+
+    if(message.author.bot) return;
+
+    if(message.content.toLowerCase().startsWith("!help"))
+    {
+
+    }
+    else if(message.content.toLowerCase().startsWith("!roles"))
+    {
+
+    }
+    else{
+        con.query('SELECT UserID,UserEXP FROM DiscordXP WHERE UserID = ${message.author.id}', (err, results) =>{
+            if(err) throw err;
+            if(results.length === 0)
+            {
+                con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES ('${message.author.id}',${randomXP()})', err=> {
+                    if(err) throw err;
+                    console.log("Successfully added " + message.author.id + " to the database!");
+                });
+            }
+            else{
+                con.query('UPDATE DiscordXP SET userEXP = ${results[0].userEXP + randomXP()} WHERE id = ${message.author.id}', err => {
+                    if(err) throw err;
+                    console.log("Successfully updated user xp!");
+                })
+            }
+        })
+    }
 });
 
 bot.on('ready', () =>{
