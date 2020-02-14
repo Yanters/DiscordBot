@@ -48,7 +48,7 @@ client.on('message', message =>{
     {
 
     }
-    else if(message.content.toLowerCase().startsWith("!roles"))
+    else if(message.content.toLowerCase().startsWith("!role"))
     {
 
     }
