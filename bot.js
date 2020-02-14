@@ -3,38 +3,6 @@ const bot = new Client();
 const PREFIX = '!';
 const cheerio = require('cheerio'); 
 const request = require('request');
-bot.on('message', message =>{
-
-    if(message.author.bot) return;
-
-    if(message.content.toLowerCase().startsWith("!help"))
-    {
-
-    }
-    else if(message.content.toLowerCase().startsWith("!roles"))
-    {
-
-    }
-    else{
-        con.query('SELECT UserID,UserEXP FROM DiscordXP WHERE UserID = 2', (err, results) =>{
-            if(err) throw err;
-            if(results.length === 0)
-            {
-                con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES (${message.author.id},${randomXP()})', err=> {
-                    if(err) throw err;
-                    console.log("Successfully added " + message.author.id + " to the database!");
-                });
-            }
-            else{
-                con.query('UPDATE DiscordXP SET userEXP = ${results[0].userEXP + randomXP()} WHERE UserID = ${message.author.id}', err => {
-                    if(err) throw err;
-                    console.log("Successfully updated user xp!");
-                })
-            }
-        })
-    }
-});
-
 
 
 bot.on('ready', () =>{
