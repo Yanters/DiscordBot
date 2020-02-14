@@ -20,14 +20,14 @@ con.connect(err => {
    con.query("SHOW TABLES", console.log);
 });
 
-client.on('guildMemberAdd', member =>{
+bot.on('guildMemberAdd', member =>{
     con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES (${member.id}, 0)', err =>{
         if(err) throw err;
         console.log("New member successfully added! "+ member.id)
     })
 });
 
-client.on('guildMemberRemove', member =>{
+bot.on('guildMemberRemove', member =>{
     con.querty('DELETE FROM DiscordXP WHERE UserID = ${member.id}', err =>{
         if(err) throw err;
         console.log("Member successfully removed!");
@@ -40,7 +40,7 @@ function randomXP()
 }
 
 
-client.on('message', message =>{
+bot.on('message', message =>{
 
     if(message.author.bot) return;
 
@@ -48,7 +48,7 @@ client.on('message', message =>{
     {
 
     }
-    else if(message.content.toLowerCase().startsWith("!role"))
+    else if(message.content.toLowerCase().startsWith("!roles"))
     {
 
     }
