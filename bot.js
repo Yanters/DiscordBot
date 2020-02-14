@@ -3,7 +3,6 @@ const bot = new Client();
 const PREFIX = '!';
 const cheerio = require('cheerio'); 
 const request = require('request');
-
 bot.on('ready', () =>{
     console.log('This bot is online!');
 });
@@ -26,17 +25,7 @@ bot.on('message', message=>{
             }   
         }
  switch(args[0]){
-        case 'suspect':
-/*
-            //    !suspect Gitara520 D02, D03, D04, D05 imgur.com/
-            //           0      1                           n-1
-            var lastelement = args.length;
-            for (var i = 2; i <= lastelement - 1; i++) {
-                var reasons = reasons + args[i];
-            }*/
-            message.channel.sendMessage("Wanted: ", args[1],  " Proof: ", args[2]);
-            break;
-
+    
         case 'sin':
             var a = parseFloat(args[1]);
             a = Math.sin(a* Math.PI / 180);
@@ -111,17 +100,18 @@ bot.on('message', message=>{
                 deleteAmount = 100;
             } else {
                 deleteAmount = parseInt(args[1]);
+            
             }
-    
+
             message.channel.bulkDelete(deleteAmount, true)
+                .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
                 .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
                 .then(m => m.delete(3000));
             break;                
-        
+
     }
  
 });
-
  
 function image(message,search){
  
@@ -166,5 +156,4 @@ function image(message,search){
  
  
 }
-
 bot.login(process.env.token);
