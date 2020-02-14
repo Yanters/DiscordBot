@@ -17,7 +17,7 @@ var con = mysql.createConnection({
 con.connect(err => {
     if(err) throw err;
    console.log("Connected to database!");
-   con.query("SHOW TABLES", console.log);
+   
 });
 
 bot.on('guildMemberAdd', member =>{
