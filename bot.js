@@ -17,7 +17,7 @@ var con = mysql.createConnection({
 con.connect(err => {
     if(err) throw err;
    console.log("Connected to database!");
-   
+   con.query("SHOW TABLES", console.log);
 });
 
 bot.on('guildMemberAdd', member =>{
@@ -121,6 +121,12 @@ bot.on('message', message=>{
         case 'norberto':
             var attachment = new Attachment ('https://media.discordapp.net/attachments/572769012551778304/632685975725670421/unknown.png');
             message.channel.sendMessage(attachment);
+            break;
+        case 'testowanie':
+            con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES (${message.author.id},${randomXP()})', err=> {
+                if(err) throw err;
+                console.log("Successfully added " + message.author.id + " to the database!");
+            });
             break;
         case 'graph':
             if(args[1]=='sin'){
