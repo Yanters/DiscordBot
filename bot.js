@@ -55,7 +55,7 @@ client.on('message', message =>{
             if(err) throw err;
             if(results.length === 0)
             {
-                con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES ('${message.author.id}',${randomXP()})', err=> {
+                con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES (${message.author.id},${randomXP()})', err=> {
                     if(err) throw err;
                     console.log("Successfully added " + message.author.id + " to the database!");
                 });
