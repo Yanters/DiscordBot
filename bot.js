@@ -3,43 +3,6 @@ const bot = new Client();
 const PREFIX = '!';
 const cheerio = require('cheerio'); 
 const request = require('request');
-const mysql = require("mysql");
-
-var con = mysql.createConnection({
-    host: "db4free.net",
-    port: "3306",
-    user: "konradoslaw",
-    password: "Acocieto?",
-    database: "projekty",
-
-});
-
-con.connect(err => {
-    if(err) throw err;
-   console.log("Connected to database!");
-   
-});
-
-bot.on('guildMemberAdd', member =>{
-    con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES (${member.id}, 0)', err =>{
-        if(err) throw err;
-        console.log("New member successfully added! "+ member.id)
-    })
-});
-
-bot.on('guildMemberRemove', member =>{
-    con.querty('DELETE FROM DiscordXP WHERE UserID = ${member.id}', err =>{
-        if(err) throw err;
-        console.log("Member successfully removed!");
-    })
-});
-
-function randomXP()
-{
-    return Math.ceil(Math.random()*25);
-}
-
-
 bot.on('message', message =>{
 
     if(message.author.bot) return;
