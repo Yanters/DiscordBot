@@ -4,12 +4,18 @@ const PREFIX = '!';
 const mysql = require("mysql");
 
 client.on('guildMemberAdd', member =>{
-    con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES ('${member.id}', 0)', err =>{
+    con.query('INSERT INTO DiscordXP (UserID, UserEXP) VALUES (${member.id}, 0)', err =>{
         if(err) throw err;
         console.log("New member successfully added! "+ member.id)
     })
 });
 
+client.on('guildMemberRemove', member =>{
+    con.querty('DELETE FROM DiscordXP WHERE UserID = ${member.id}', err =>{
+        if(err) throw err;
+        console.log("Member successfully removed!");
+    })
+});
 
 var con = mysql.createConnection({
     host: "db4free.net",
