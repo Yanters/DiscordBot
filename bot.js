@@ -26,7 +26,17 @@ bot.on('message', message=>{
             }   
         }
  switch(args[0]){
-    
+        case 'suspect':
+
+            //    !suspect Gitara520 D02, D03, D04, D05 imgur.com/
+            //           0      1                           n-1
+            var lastelement = args.length;
+            for (var i = 2; i <= lastelement - 1; i++) {
+                var reasons = reasons + args[i];
+            }
+            message.channel.sendMessage("Wanted: ", args[1], " Reasons: ", reasons, " Proof: ", args[lastelement]);
+            break;
+
         case 'sin':
             var a = parseFloat(args[1]);
             a = Math.sin(a* Math.PI / 180);
