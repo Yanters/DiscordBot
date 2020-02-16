@@ -108,7 +108,6 @@ bot.on('message', message=>{
             }
             message.channel.bulkDelete(deleteAmount, true)
                 .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
-                .then(deleted => message.channel.send(`I deleted \`${deleted.size}\` messages.`))
                 .then(m => m.delete(3000));
             break;                
     }
