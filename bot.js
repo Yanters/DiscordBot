@@ -6,7 +6,7 @@ const request = require('request');
 
 
 function OOblicz(x) {
-  return Math.sin(x)-x*x;
+  return x*x*x-x*x+3;
 }
 
 bot.on('ready', () =>{
