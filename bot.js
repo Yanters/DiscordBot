@@ -34,7 +34,7 @@ bot.on('message', message=>{
         case 'oblicz':
         ///Kod ZZP
          var eps = 0.0000001;
-        var a, b, c;
+        var a=0.1, b=0.1, c=0.1;
         a = args[1];
         b = args[2];
         
