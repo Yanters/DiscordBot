@@ -33,15 +33,14 @@ bot.on('message', message => {
             if (userr) {
                 const member = message.guild.member(userr);
                 var kpowod = ``;
-                for (var i = 3; i < args.length; i++) {
-                    kpowod = kpowod + args[i];
+                for (var i = 2; i < args.length; i++) {
+                    kpowod = kpowod + " " + args[i];
                 }
                 if (member) {
                     member.kick(`Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu: ${kpowod}`).then(() => {
                         message.channel.sendMessage(`Użytkownik ${userr.tag} został wyrzucony z serwera z powodu: ${kpowod}`);
                     }).catch(err => {
-                        message.reply(`Nie udało mi się wyrzucić ${userr.tag}`);
-                        console.log(err);
+                        message.reply(`Nie udało mi się wyrzucić ${userr.tag}`)
                     });
                 }
             } else {
@@ -55,8 +54,8 @@ bot.on('message', message => {
             if (userrr) {
                 const member = message.guild.member(userrr);
                 var kpowod = ``;
-                for (var i = 3; i < args.length; i++) {
-                    kpowod = kpowod + args[i];
+                for (var i = 2; i < args.length; i++) {
+                    kpowod = kpowod + " " + args[i];
                 }
                 if (member) {
                     member.ban({ ression: `Zostałeś zbanowany z serwera Trailer Parks Boys z powodu: ${kpowod}` }).then(() => {
