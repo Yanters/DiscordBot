@@ -37,7 +37,8 @@ bot.on('message', message => {
                     kpowod = kpowod + " " + args[i];
                 }
                 if (member) {
-                    member.kick(`**Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu:${kpowod}**`).then(() => {
+                    userr.sendMessage(`**Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu:${kpowod}**`);
+                    member.kick().then(() => {
                         message.channel.sendMessage(`**Użytkownik ${userr.tag} został wyrzucony z serwera z powodu:${kpowod}**`);
                     }).catch(err => {
                         message.reply(`**Nie udało mi się wyrzucić ${userr.tag}**`)
