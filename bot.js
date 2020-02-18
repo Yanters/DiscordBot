@@ -37,9 +37,9 @@ bot.on('message', message => {
                     kpowod = kpowod + " " + args[i];
                 }
                 if (member) {
-                    userr.sendMessage(`**Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu:${kpowod}**`);
+                    userr.sendMessage(`Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu:*${kpowod}*`);
                     member.kick().then(() => {
-                        message.channel.sendMessage(`**Użytkownik ${userr.tag} został wyrzucony z serwera z powodu:${kpowod}**`);
+                        message.channel.sendMessage(`Użytkownik **${userr.tag}** został wyrzucony z serwera z powodu:*${kpowod}*`);
                     }).catch(err => {
                         message.reply(`**Nie udało mi się wyrzucić ${userr.tag}**`)
                     });
@@ -59,8 +59,9 @@ bot.on('message', message => {
                     kpowod = kpowod + " " + args[i];
                 }
                 if (member) {
-                    member.ban({ ression: `**Zostałeś zbanowany z serwera Trailer Parks Boys z powodu:${kpowod}**` }).then(() => {
-                        message.channel.sendMessage(`**Użytkownik ${userrr.tag} został zbanowany z serwera z powodu:${kpowod}**`);
+                    userrr.sendMessage(`Zostałeś zbanowany z serwera Trailer Parks Boys z powodu:*${kpowod}*`);
+                    member.ban().then(() => {
+                        message.channel.sendMessage(`Użytkownik **${userrr.tag}** został zbanowany z serwera z powodu:*${kpowod}*`);
                     });
                 }
             } else {
