@@ -31,19 +31,19 @@ bot.on('message', message => {
                 message.channel.reply("za wysokie progi jak na twoje nogi.");
                 break;
             }
-            const user = message.mentions.users.first();
+            const userr = message.mentions.users.first();
 
-            if (user) {
-                const member = message.guild.member(user);
+            if (userr) {
+                const member = message.guild.member(userr);
                 var kpowod = ``;
                 for (var i = 3; i < length; i++) {
                     kpowod = kpowod + args[i];
                 }
                 if (member) {
                     member.kick(`Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu: ${kpowod}`).then(() => {
-                        message.channel.sendMessage(`Użytkownik ${user.tag} został wyrzucony z serwera z powodu: ${kpowod}`);
+                        message.channel.sendMessage(`Użytkownik ${userr.tag} został wyrzucony z serwera z powodu: ${kpowod}`);
                     }).catch(err => {
-                        message.reply(`Nie udało mi się wyrzucić ${user.tag}`)
+                        message.reply(`Nie udało mi się wyrzucić ${userr.tag}`)
                     });
                 }
             } else {
@@ -55,17 +55,17 @@ bot.on('message', message => {
                 message.channel.reply("za wysokie progi jak na twoje nogi.");
                 break;
             }
-            const user = message.mentions.users.first();
+            const userrr = message.mentions.users.first();
 
-            if (user) {
-                const member = message.guild.member(user);
+            if (userrr) {
+                const member = message.guild.member(userrr);
                 var kpowod = ``;
                 for (var i = 3; i < length; i++) {
                     kpowod = kpowod + args[i];
                 }
                 if (member) {
                     member.ban({ ression: `Zostałeś zbanowany z serwera Trailer Parks Boys z powodu: ${kpowod}` }).then(() => {
-                        message.channel.sendMessage(`Użytkownik ${user.tag} został zbanowany z serwera z powodu: ${kpowod}`);
+                        message.channel.sendMessage(`Użytkownik ${userrr.tag} został zbanowany z serwera z powodu: ${kpowod}`);
                     });
                 }
             } else {
