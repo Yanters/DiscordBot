@@ -40,7 +40,8 @@ bot.on('message', message => {
                     member.kick(`Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu: ${kpowod}`).then(() => {
                         message.channel.sendMessage(`Użytkownik ${userr.tag} został wyrzucony z serwera z powodu: ${kpowod}`);
                     }).catch(err => {
-                        message.reply(`Nie udało mi się wyrzucić ${userr.tag}`)
+                        message.reply(`Nie udało mi się wyrzucić ${userr.tag}`);
+                        console.log(err);
                     });
                 }
             } else {
