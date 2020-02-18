@@ -27,10 +27,7 @@ bot.on('message', message => {
     }
     switch (args[0]) {
         case 'kick':
-            if (!message.member.roles.find(r => r.name === "Zarząd")) {
-                message.channel.reply("za wysokie progi jak na twoje nogi.");
-                break;
-            }
+            if (!message.member.roles.find(r => r.name === "Zarząd")) return message.channel.send("Za wysokie progi jak na twoje nogi.");
             const userr = message.mentions.users.first();
 
             if (userr) {
@@ -51,10 +48,7 @@ bot.on('message', message => {
             }
             break;
         case 'ban':
-            if (!message.member.roles.find(r => r.name === "Zarząd")) {
-                message.channel.reply("za wysokie progi jak na twoje nogi.");
-                break;
-            }
+            if (!message.member.roles.find(r => r.name === "Zarząd")) return message.channel.send("Za wysokie progi jak na twoje nogi.");
             const userrr = message.mentions.users.first();
 
             if (userrr) {
