@@ -37,18 +37,18 @@ bot.on('message', message => {
                     kpowod = kpowod + " " + args[i];
                 }
                 if (member) {
-                    member.kick(`Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu: ${kpowod}`).then(() => {
-                        message.channel.sendMessage(`Użytkownik ${userr.tag} został wyrzucony z serwera z powodu: ${kpowod}`);
+                    member.kick(`**Zostałeś wyrzucony z serwera Trailer Parks Boys z powodu:${kpowod}**`).then(() => {
+                        message.channel.sendMessage(`**Użytkownik ${userr.tag} został wyrzucony z serwera z powodu:${kpowod}**`);
                     }).catch(err => {
-                        message.reply(`Nie udało mi się wyrzucić ${userr.tag}`)
+                        message.reply(`**Nie udało mi się wyrzucić ${userr.tag}**`)
                     });
                 }
             } else {
-                message.reply(`Musisz poprawnie wpisać komendę.`)
+                message.reply(`**Musisz poprawnie wpisać komendę.**`)
             }
             break;
         case 'ban':
-            if (!message.member.roles.find(r => r.name === "Zarząd")) return message.channel.send("Za wysokie progi jak na twoje nogi.");
+            if (!message.member.roles.find(r => r.name === "Zarząd")) return message.channel.send("**Za wysokie progi jak na twoje nogi.**");
             const userrr = message.mentions.users.first();
 
             if (userrr) {
@@ -58,12 +58,12 @@ bot.on('message', message => {
                     kpowod = kpowod + " " + args[i];
                 }
                 if (member) {
-                    member.ban({ ression: `Zostałeś zbanowany z serwera Trailer Parks Boys z powodu: ${kpowod}` }).then(() => {
-                        message.channel.sendMessage(`Użytkownik ${userrr.tag} został zbanowany z serwera z powodu: ${kpowod}`);
+                    member.ban({ ression: `**Zostałeś zbanowany z serwera Trailer Parks Boys z powodu:${kpowod}**` }).then(() => {
+                        message.channel.sendMessage(`**Użytkownik ${userrr.tag} został zbanowany z serwera z powodu:${kpowod}**`);
                     });
                 }
             } else {
-                message.reply(`Musisz poprawnie wpisać komendę.`)
+                message.reply(`**Musisz poprawnie wpisać komendę.**`)
             }
             break;
         //////////
