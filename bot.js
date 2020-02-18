@@ -33,7 +33,7 @@ bot.on('message', message => {
             if (userr) {
                 const member = message.guild.member(userr);
                 var kpowod = ``;
-                for (var i = 3; i < length; i++) {
+                for (var i = 3; i < args.length; i++) {
                     kpowod = kpowod + args[i];
                 }
                 if (member) {
@@ -54,7 +54,7 @@ bot.on('message', message => {
             if (userrr) {
                 const member = message.guild.member(userrr);
                 var kpowod = ``;
-                for (var i = 3; i < length; i++) {
+                for (var i = 3; i < args.length; i++) {
                     kpowod = kpowod + args[i];
                 }
                 if (member) {
