@@ -132,7 +132,7 @@ bot.on('message', message => {
 
             // Maybe the bot can't delete messages
             if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) {
-                return message.reply("Sorryy... I can't delete messages.").then(m => m.delete(3000));
+                return message.reply("Sorryy... I can't delete messages.").then(m => m.delete(3010));
             }
 
             let deleteAmount;
